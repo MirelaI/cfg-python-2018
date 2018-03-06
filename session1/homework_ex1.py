@@ -8,4 +8,4 @@ print 10.0 / 3.0
 # Result should be 1
 print 10 % 3
 # Result should be 1.0
-print 10.0 % 3.0 # 1.0
+print 10.0 % 3.0
