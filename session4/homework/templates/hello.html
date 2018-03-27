@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <title>My Flask App Page</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="css/main.css") }}">
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- Here name will either be None or some random name provided to the /<name> route -->
+            {% if name %}
+            <h1>Hello {{name}}!</h1>
+            {% else %}
+            <!-- In case name is None it will fall in this case so it will display 'Hello anonymous person' -->
+            <h1>Hello anonymous person!</h1>
+            {% endif %}
+
+            <p>Let's keep in touch!</p>
+            <div class="hello" id="contact-form">
+                <form method="post" action="/signup">
+                    <label for="email">Email address:</label>
+                    <input type="email" id="email" name="email" required="required">
+                    <input type="submit" value="Submit" id="submit-button">
+                </form>
+            </div>
+
+            <div id="register">
+                <a href="/user/register">Register to our desserts</a>
+            </div>
+        </div>
+    </body>
+
+</html>

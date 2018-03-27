@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <head>
+        <title>User Registration</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="css/main.css") }}">
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- Here name will either be None or some random name provided to the /<name> route -->
+            {% if message %}
+            <h2>{{ message }}</h2>
+
+            {% else %}
+
+            <h1>Register with us for desserts</h1>
+
+            <h2>Please tell us more about you</h2>
+            <div id="contact-form">
+                <form method="post" action="/user/register_submit">
+                    <div class="base-form">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" required="required">
+                    </div>
+                    <div>
+                        <div class="base-form">
+                            <label for="dessert">Favorite dessert</label>
+                            <input name="dessert" type="radio" value="Brownies"> <label>Brownie</label>
+                            <input name="dessert" type="radio" value="Ice Cream"> <label>Ice cream</label>
+                            <input name="dessert" type="radio" value="Cinnamon Rolls"> <label>Cinnamon rolls</label>
+                        </div>
+
+                        <div class="base-form">
+                            <label>Are there any other dessert preferences</label>
+                            <input id="other" name="other" type="text" placeholder="Please specify">
+                        </div>
+                    </div>
+
+                    <input type="submit" value="Submit" id="submit-button">
+                </form>
+            </div>
+            {% endif %}
+        </div>
+    </body>
+
+</html>
