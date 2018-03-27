@@ -45,6 +45,8 @@ def bye():
 # great as it avoids code duplication. In our case we just have to
 # register '/' route and "/<name>" to the hello method. Now this
 # method will handle both routes in case the user accesses them.
+# More about route registration:
+# http://flask.pocoo.org/docs/0.12/api/#url-route-registrations
 
 @app.route("/")
 @app.route("/<name>")
