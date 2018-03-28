@@ -85,11 +85,22 @@ def hello(name=None):
 # use this as a guidance as this is just an exercise for you to play around with templates
 # and HTML.
 
+# Here we are defining a new route and will link this new route
+# to a new template, let's call it register.html. You should see
+# it under templates folder.
 @app.route("/user/register")
 def register(name=None, dessert=None, other=None):
     return render_template("register.html")
 
+# We have to register a new route as the action for the
+# registration form that we created at the previous route.
+# When a user clicks submit on the registration page the
+# method linked to this route will be called. Just to recall
+# from the register.html template:
+# <form method="post" action="/user/register_submit">
 
+# If we get any data from the user, transform it into a nice
+# message and pass it back to the user.
 @app.route("/user/register_submit", methods=["POST"])
 def register_submit():
     form_data = request.form
@@ -101,7 +112,8 @@ def register_submit():
 
     return render_template("register.html", message=message)
 
-
+# The signup method defined in class, this is
+# used in hello.html form.
 @app.route("/signup", methods=["POST"])
 def sign_up():
     form_data = request.form
