@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request
 
 app = Flask("MyApp")
 
@@ -79,11 +79,11 @@ def hello(name=None):
 #
 # You can approach this however you want, there a an infinite possibilities to extend this.
 #
-# I will create an example that will redirect you to a registration page and you
-# will fill a form and after you submit you will see a message on the same page but
-# the form will not appear anymore since you already submitted the data. Please
-# use this as a guidance as this is just an exercise for you to play around with templates
-# and HTML.
+# I will create an example that will redirect you to a registration page,from the current
+# hello.html page. You will fill a form and after you submit you will see a message on
+# the same page but the form will not appear anymore since you already submitted the data.
+# Please use this as a guidance as this is just an exercise for you to play around with
+# templates, HTML and CSS.
 
 # Here we are defining a new route and will link this new route
 # to a new template, let's call it register.html. You should see
